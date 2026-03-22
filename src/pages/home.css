@@ -226,9 +226,21 @@ font-size: 23px;
     text-align: center;
   }
 .hero-text button{
+    width: 333px;  
   font-size: 21px;
 }
+.hero img{
+  width:429px;
+}
+
+.hero-text h1 {
+    font-size: 51px;
  
+}
+
+.hero-text-p{
+  font-size:20px;
+}
 }
 
 @media (max-width: 768px) {

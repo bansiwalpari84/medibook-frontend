@@ -107,3 +107,9 @@
 
   font-size:16px;
 }
+
+@media (max-width: 768px) {
+  .doctor-title{
+  font-size: 43px;
+}
+}

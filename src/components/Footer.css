@@ -115,4 +115,8 @@ display: flex;
     display:flex; 
     flex-direction: column;
   }
+
+  .footer-contact{
+    text-align: left;
+  }
 }
