@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  .account-card,
+  .booking-form {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

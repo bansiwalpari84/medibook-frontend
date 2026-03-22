@@ -1,0 +1,164 @@
+
+
+.doctor-profile-container{
+  display:flex;
+  justify-content:center;
+
+  margin-top:11px;
+  padding:40px;
+}
+
+.doctor-profile-image{
+  width:260px;
+  height:260px;
+
+  object-fit: contain;
+
+  border-radius:16px;
+
+  flex-shrink:0;   /* prevents image from shrinking */
+}
+
+.doctor-profile-info{
+  flex:1;
+}
+
+.doctor-profile-info h2{
+  font-size:30px;
+  color:#1e293b;
+}
+
+.doctor-profile-card{
+  display:flex;              /* THIS creates horizontal layout */
+  align-items:flex-start;
+
+  gap:40px;
+
+  max-width:900px;
+  width:100%;
+
+  background:white;
+  padding:30px;
+
+  border-radius:20px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.doctor-speciality{
+  margin-top:6px;
+  color:#64748b;
+  font-size:16px;
+}
+
+.doctor-experience{
+  display:inline-block;
+
+  margin-top:10px;
+
+  background:#e0ecff;
+  color:#2563eb;
+
+  padding:6px 12px;
+
+  border-radius:20px;
+
+  font-size:13px;
+}
+
+.doctor-about{
+  margin-top:20px;
+
+  color:#475569;
+
+  line-height:1.6;
+}
+
+.doctor-fee{
+  margin-top:20px;
+
+  font-weight:600;
+
+  color:#1e293b;
+}
+
+.doctor-book-btn{
+  margin-top:20px;
+
+  padding:12px 24px;
+
+  border:none;
+
+  background:#2563eb;
+
+  color:white;
+
+  border-radius:30px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all 0.25s ease;
+}
+
+.doctor-book-btn:hover{
+  background:#1e4ed8;
+  transform:translateY(-2px);
+}
+
+.slots-section{
+  margin-top: 30px;
+}
+
+.slots-section h3{
+  margin-bottom:10px;
+  color:#1e293b;
+}
+
+.days-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.day{
+  padding:8px 14px;
+
+  border-radius:20px;
+
+  background:#f1f5f9;
+
+  font-size:13px;
+
+  color:#475569;
+}
+
+.slots-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.slot{
+  padding:10px 16px;
+
+  border-radius:20px;
+
+  background:#e0ecff;
+
+  color:#2563eb;
+
+  font-size:13px;
+
+  cursor:pointer;
+
+  transition:all 0.25s ease;
+}
+
+.slot:hover{
+  background:#2563eb;
+  color:white;
+
+  transform:translateY(-2px);
+}

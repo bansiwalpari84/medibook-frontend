@@ -1,0 +1,70 @@
+.appointments-container {
+  padding: 40px;
+}
+
+.appointments-title {
+color:#2563eb;
+ text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.appointment-card {
+ font-size: 18px;
+  width: 327px;
+    height: 270px;
+    display: flex;
+    gap: 25px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.appointment-image {
+ width: 119px;
+    height: 155px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+
+.appointment-info h3 {
+  margin: 0;
+}
+
+.appointment-info p {
+  margin: 4px 0;
+  color: #555;
+}
+
+.no-appointments {
+  color: gray;
+  margin-top: 20px;
+}
+
+.appointment-cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.status.pending {
+  color: orange;
+}
+
+.status.approved {
+  color: green;
+}
+
+.status.cancelled {
+  color: red;
+}

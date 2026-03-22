@@ -1,0 +1,275 @@
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 23px 120px;
+}
+
+.hero-text{
+  max-width:500px;
+}
+
+.hero-text h1{
+  font-size:60px;
+  color:#2563eb;
+}
+
+.hero-text p{
+  margin-top:20px;
+  color:#555;
+  font-size: 25px; 
+}
+
+
+.hero-btn{
+  background:#2563eb;
+  color:white;
+
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all 0.25s ease;
+}
+
+.hero-btn:hover{
+  background:#1e4ed8;
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 18px rgba(37,99,235,0.35);
+}
+.hero-text button{
+  font-size: 16px;
+    margin-top: 15px;
+    padding: 19px 24px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 69px;
+    cursor: pointer;
+    width: 212px;
+}
+
+.hero-text button:hover{
+  background:#1d4ed8;
+}
+
+.hero img{
+  width:600px;
+}
+
+.doctor-section{
+  max-width:1100px;
+  margin:auto;
+}
+
+.doctor-section h2{
+  color:#2563eb;
+   text-align: center;
+  font-size: 45px; 
+  margin-bottom:40px;
+}
+
+.doctor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top:30px;
+}
+.booking-banner{
+ width: 83%;
+    margin: 37px auto;
+
+  background:#2563eb;
+  color:white;
+
+  border-radius:20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:50px 60px;
+
+  position:relative;
+}
+
+.booking-banner img{
+  width: 390px;
+    position: absolute;
+    right: 3px;
+    bottom: 0px;
+}
+
+.banner-content{
+  padding-right:200px;
+  font-size: 20px;
+}
+
+.banner-content h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.banner-content p{
+  color:#e2e8f0;
+  line-height:1.6;
+}
+
+.banner-btn{
+  margin-top:20px;
+font-size: 23px;
+  background:white;
+  color:#2563eb;
+
+  border:none;
+  padding:12px 28px;
+
+  border-radius:38px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all 0.25s ease;
+}
+
+.banner-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.account-card {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.account-card h2 {
+  margin-bottom: 15px;
+}
+
+.account-card select,
+.account-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.create-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-btn:hover {
+  background: #0056b3;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.view-more-container{
+  text-align:center;
+  margin-top:30px;
+}
+
+.view-more-btn{
+  padding:12px 24px;
+
+  background:#2563eb;
+  color:white;
+
+  border:none;
+  border-radius:30px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:all 0.25s ease;
+}
+
+.view-more-btn:hover{
+  background:#1e4ed8;
+  transform:translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+.hero-text button{
+  font-size: 21px;
+}
+ 
+}
+
+@media (max-width: 768px) {
+ .booking-banner img {
+    display: none;
+  }
+
+  .booking-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 15px;
+  }
+
+  .banner-content {
+    width: 100%;
+    max-width: 400px;
+
+    background: #2563eb;;
+    padding: 20px;
+
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+    text-align: center;
+  }
+
+  .banner-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .banner-content p {
+    color:white;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .banner-btn {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,24 @@
+.heading{
+    text-align: center;
+    color: #2563eb;
+    font-size: 40px;
+}
+.heading h2{
+    padding-top :0px;
+    margin:38px;
+}
+@media (max-width: 768px) {
+  .account-card,
+  .booking-form {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

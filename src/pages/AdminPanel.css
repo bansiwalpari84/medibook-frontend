@@ -1,0 +1,70 @@
+.admin-container {
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.admin-title {
+    text-align: center;
+    color:#2563eb;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.admin-form h3{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.admin-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.admin-form button {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-form button:hover {
+  background: #0056b3;
+}
+
+.admin-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+.alldoc{
+    text-align: center;
+    text-decoration: underline;
+}
