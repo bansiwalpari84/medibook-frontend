@@ -87,7 +87,7 @@ useEffect(() => {
 
     {/* EMPTY STATE */}
     {filteredDoctors.length === 0 && (
-      <p className="no-doctors">No doctors found</p>
+      <p className="no-doctors">Loading doctors...</p>
     )}
 
   </div>

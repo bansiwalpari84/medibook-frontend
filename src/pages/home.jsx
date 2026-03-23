@@ -12,16 +12,21 @@ function Home() {
   const [showAll, setShowAll] = useState(false)
   const [doctors, setDoctors] = useState([])
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
  
-  useEffect(() => {
+ useEffect(() => {
   fetch("https://medibook-backend-4vub.onrender.com/api/doctors")
     .then(res => res.json())
     .then(data => {
       console.log("Home doctors:", data)
       setDoctors(data)
+      setLoading(false)
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      setLoading(false)
+    }) 
 }, [])
 
   return (
@@ -78,15 +83,22 @@ function Home() {
 
         <div className="doctor-list">
 
-         {(showAll ? doctors : doctors.slice(0, 8)).map((doctor) => (
-  <DoctorCard
-    key={doctor._id}
-    id={doctor._id}
-    name={doctor.name}
-    specialization={doctor.specialization}
-    image={doctor.image}
-  />
-))}
+ {loading ? (
+<div className="spinner"></div>
+) : doctors.length === 0 ? (
+  <p>No doctors available right now</p>
+) : (
+  (showAll ? doctors : doctors.slice(0, 8)).map((doctor) => (
+    <DoctorCard
+      key={doctor._id}
+      id={doctor._id}
+      name={doctor.name}
+      specialization={doctor.specialization}
+      image={doctor.image}
+    />
+  ))
+)}
+
 </div>
 
     {doctors.length > 8 && (
