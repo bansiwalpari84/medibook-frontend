@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import "./Doctors.css"
 import { useLocation } from "react-router-dom"
 import DoctorCard from "../components/DoctorCard"
@@ -12,6 +13,7 @@ function Doctors() {
   const params = new URLSearchParams(location.search)
 
   const speciality = params.get("speciality")
+  const navigate = useNavigate()
 useEffect(() => {
   fetch("https://medibook-backend-4vub.onrender.com/api/doctors")
     .then(res => res.json())
@@ -25,9 +27,9 @@ useEffect(() => {
   // FILTER LOGIC
   const filteredDoctors = doctors.filter((doc) => {
 
-  const matchesSpeciality = speciality
-    ? doc.specialization === speciality
-    : true
+ const matchesSpeciality = speciality
+  ? doc.specialization.toLowerCase().includes(speciality.toLowerCase())
+  : true
 
   const matchesSearch =
     doc.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -48,17 +50,17 @@ useEffect(() => {
 
       <div className="filter-buttons">
 
-        <button onClick={() => window.location.href="/doctors"}>
-          All
-        </button>
+       <button onClick={() => navigate("/doctors")}>
+  All
+</button>
 
-        <button onClick={() => window.location.href="/doctors?speciality=Cardiologist"}>
-          Cardiologist
-        </button>
+<button onClick={() => navigate("/doctors?speciality=Cardiologist")}>
+  Cardiologist
+</button>
 
-        <button onClick={() => window.location.href="/doctors?speciality=Dermatologist"}>
-          Dermatologist
-        </button>
+<button onClick={() => navigate("/doctors?speciality=Dermatologist")}>
+  Dermatologist
+</button>
 
       </div>
 
