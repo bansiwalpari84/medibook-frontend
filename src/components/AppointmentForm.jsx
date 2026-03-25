@@ -51,6 +51,7 @@ if (!doctorId) {
       body: JSON.stringify({
        doctorId: doctorId, 
         patientName,
+        email,
         date,
         time
       })

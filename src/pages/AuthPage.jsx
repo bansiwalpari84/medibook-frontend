@@ -33,10 +33,10 @@ useEffect(() => {
 const handleSubmit = async (e) => {
   e.preventDefault()
 
-  if (!name || !email || !password) {
-    alert("Please fill all fields")
-    return
-  }
+ if (!email || !password || (role !== "admin" && !name)) {
+  alert("Please fill all fields")
+  return
+}
 
   try {
     const url = isLogin
@@ -75,7 +75,8 @@ const handleSubmit = async (e) => {
     }
 
     // LOGIN SUCCESS
-    localStorage.setItem("role", data.role)
+    localStorage.setItem("role", data.role);
+    localStorage.setItem("email", data.email);
 
     if (data.role === "doctor") {
       localStorage.setItem("doctorId", data.doctorId)
@@ -109,25 +110,30 @@ if (storedRole && window.location.pathname === "/auth") {
 
   return (
     <div className="account-card">
-      <p style={{ textAlign: "center" }}>
-  {isLogin ? "Don't have an account?" : "Already have an account?"}
-  <span
-    style={{ color: "blue", cursor: "pointer", marginLeft: "5px" }}
-    onClick={() => setIsLogin(!isLogin)}
-  >
-    {isLogin ? "Register" : "Login"}
-  </span>
-</p>
+      {role !== "admin" && (
+  <p style={{ textAlign: "center" }}>
+    {isLogin ? "Don't have an account?" : "Already have an account?"}
+    <span
+      style={{ color: "blue", cursor: "pointer", marginLeft: "5px" }}
+      onClick={() => setIsLogin(!isLogin)}
+    >
+      {isLogin ? "Register" : "Login"}
+    </span>
+  </p>
+)}
         <form onSubmit={handleSubmit}>
 
-      <h2>Login / Create Account</h2>
+      <h2>{role === "admin" ? "Admin Login" : "Login / Create Account"}</h2>
 
-      <input required
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+     {role !== "admin" && (
+  <input
+    required
+    type="text"
+    placeholder="Enter your name"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+  />
+)}
 
       <input required
   type="password"
@@ -143,15 +149,17 @@ if (storedRole && window.location.pathname === "/auth") {
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <select required
-        onChange={(e) => {
-          setRole(e.target.value)
-        }}
-      >
-        <option value="user">User</option>
-        <option value="doctor">Doctor</option>
-        <option value="admin">Admin</option>
-      </select>
+     {role !== "admin" && (
+  <select
+    required
+    onChange={(e) => {
+      setRole(e.target.value)
+    }}
+  >
+    <option value="user">User</option>
+    <option value="doctor">Doctor</option>
+  </select>
+)}
 
   {!isLogin && role === "doctor" && (
   <select
@@ -174,6 +182,19 @@ if (storedRole && window.location.pathname === "/auth") {
       >
         Continue
       </button>
+
+    <p style={{ textAlign: "center", marginTop: "10px" }}>
+  Admin?{" "}
+  <span
+    style={{ color: "red", cursor: "pointer" }}
+    onClick={() => {
+      setIsLogin(true)
+      setRole("admin")
+    }}
+  >
+    Login here
+  </span>
+</p>  
 </form>
     </div>
   )
